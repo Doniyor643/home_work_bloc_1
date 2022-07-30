@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.blue,
           foregroundColor: Colors.white,
           onPressed: () {
-            // Respond to button press
+            BlocProvider.of<ListPostCubit>(context).callCreatePage(context);
           },
           child: const Icon(Icons.add),
         ));

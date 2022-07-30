@@ -29,17 +29,14 @@ Widget itemOfPost(Post post) {
             SlidableAction(
               backgroundColor: Colors.green,
               onPressed: (context){
-                // Navigator.push(context, MaterialPageRoute(
-                //     builder: (context) => EditUser(
-                //       userId: post.id.toString(),
-                //       userBody: post.body,
-                //       userText: post.title,
-                //     )));
+                BlocProvider.of<ListPostCubit>(context).callUpdatePage(context, post);
               },
               icon: Icons.drive_file_rename_outline,
               label: "Rename",),
           ]),
       child: Container(
+        width: double.infinity,
+        height: 75,
         padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
